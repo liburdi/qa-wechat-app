@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container bg">
+<block wx:if="{{deg}}">
+<view class="fixed one">python scipy</view>
+<view class="fixed two">回归分析</view>
+<view class="fixed three">scikit-learn</view>
+<view class="fixed four">决策树</view>
+<view class="fixed five">随机森林</view>
+</block>
+<block wx:else>
+<view class="fixed one-1">python scipy</view>
+<view class="fixed two-1">回归分析</view>
+<view class="fixed three-1">scikit-learn</view>
+<view class="fixed four-1">决策树</view>
+<view class="fixed five-1">随机森林</view>
+</block>
+  <view class="userinfo">
+
+    <view wx:if="{{!hasUserInfo && canIUse}}" class="header-box">
+      <image class="userinfo-avatar" src="/images/dog.jpg" mode="cover"></image>
+      <text class="userinfo-nickname">柴犬君</text>
+    </view>
+
+    <block wx:else>
+      <view class="header-box">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="usermotto">
+    <image src="/images/yun.jpg" lazy-load="true" mode="widthFix" />
+  </view>
+  <view class="select-box">
+    <checkbox-group bindchange="checkboxChange" class="check-box">
+      <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{items}}" wx:key="key">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </checkbox-group>
+    <block wx:if="{{!hasUserInfo && canIUse}}">
+      <button class="next-question"  open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-type="AI"> AI鉴定 </button>
+      <button class="next-question planB"  open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-type="FX"> 佛系鉴定 </button>
+    </block>
+    <block wx:else>
+      <button class="next-question" bindtap="rewrite" data-url="/pages/result/result" data-plan="false">AI鉴定</button>
+      <button class="next-question planB" bindtap="rewrite" data-url="/pages/make/make" data-plan="true" >佛系鉴定</button>
+    </block>
+  </view>
+</view>

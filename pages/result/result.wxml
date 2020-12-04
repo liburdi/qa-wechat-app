@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container bg">
+  <view class="userinfo">
+
+    <view wx:if="{{!hasUserInfo && canIUse}}" class="header-box">
+      <image class="userinfo-avatar" src="/images/dog.jpg" mode="cover"></image>
+      <text class="userinfo-nickname">柴犬君</text>
+    </view>
+
+    <block wx:else>
+      <view class="header-box">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{checking===true}}" class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view wx:else class="question-box">
+    <view class="q-box-header">-{{constellations[questionIndex].title}}-</view>
+    <view  class="q-box-content">{{constellations[questionIndex].question}}</view>
+    <picker  bindtap="clearTime" bindchange="bindPickerChange" value="{{index}}" range="{{constellations[questionIndex].answer}}">
+      <view wx:if="{{questionIndex==0}}" class="picker">
+      <image  wx:if="{{showBg===true}}" class="bgImg" src="/images/zhiWen.png"></image>
+       <image  wx:else class="bgImg" ></image>
+      <other-widget class="other-wigdget">-{{constellations[questionIndex].answer[index]}}-</other-widget> 
+        
+      </view>
+      <view wx:if="{{questionIndex==1}}" class="picker picker-{{index}}">
+       <image  wx:if="{{showBg===true}}" class="bgImg" src="/images/zhiWen.png"></image>
+        <image  wx:else class="bgImg" ></image>
+      <other-widget class="other-wigdget">-{{constellations[questionIndex].answer[index]}}-</other-widget> 
+      </view>
+    </picker>
+    <button wx:if="{{questionIndex!=1}}" class="next-question" bindtap="nextQuestion" role="button">再来一题</button>
+    <block  wx:else>
+    <button class="next-question" bindtap="makeResult" role="button">获取结果</button>
+    </block>
+
+  </view>
+
+</view>

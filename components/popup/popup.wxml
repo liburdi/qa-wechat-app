@@ -1,0 +1,148 @@
+<!--components/popup/popup.wxml-->
+<block wx:if="{{showModal}}">
+    
+    <!--default popup-->
+    <block wx:if="{{modalType == 'default'}}">
+        <cover-view class="modal-mask" catchtouchmove="true"></cover-view>
+        <cover-view class="modal-dialog" catchtouchmove="true">
+            
+            <cover-view class="m-info">
+                <block wx:if="{{imgUrl}}">
+                    <cover-image src='{{imgUrl}}' class='m-i-img'></cover-image>
+                </block>
+                <cover-view class="content-box">
+                    {{content}}
+                </cover-view>
+                
+            </cover-view>
+            <cover-view class="modal-footer">
+                <cover-view class="btn-footer " bindtap="_onCancel">
+                    <cover-view>{{cancelText}}</cover-view>
+                </cover-view>
+                <cover-view class="btn-footer btn-r-footer" bindtap="_onConfirm">
+                    <cover-view wx:if="{{openSetting}}">
+                        <button open-type="openSetting"
+bindopensetting='_handleSetting' style="color:#02BB00;">{{confirmText}}</button>
+                    </cover-view>
+                    <cover-view wx:else>
+                        <cover-view>{{confirmText}}</cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+    </block>
+    <!--best popup-->
+    <block wx:elif="{{modalType == 'best'}}">
+        <view class="modal-mask" catchtouchmove="true"></view>
+        <view class="m-dialog">
+            <view class="m-avater-best">
+                <image src='/img/bind_title_avater.png'></image>
+            </view>
+            <view class="m-title-best">
+                <image src='/img/bind_title_icon.png'></image>为了您的账号安全，请绑定手机号哦~
+            </view>
+            <view class="m-button-best">
+                <button bindtap="_onCancel" class="default">{{cancelText}}</button>
+                <block wx:if="{{confirmGetPhone}}">
+                    <button class="success" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">{{confirmText}}</button>
+                </block>
+                <block wx:else>
+                    <button bindtap="_onConfirm" class="success">{{confirmText}}</button>
+                </block>
+            </view>
+        </view>
+    </block>
+    <!--better popup-->
+    <block wx:elif="{{modalType == 'better'}}">
+        <view class="modal-mask" catchtouchmove="true"></view>
+        <view class="m-dialog" catchtouchmove="true">
+            <view class="m-header-better">
+                <view  style="{{avaterStyle}}" class="m-avater-better">
+                    <image  style="{{avaterStyle}}" src="{{ avaterSrc ?avaterSrc : '/img/rule_avater.png'}}"></image>
+                </view>
+                <view class="cancel-btn" bindtap="_onCancel">
+                    X
+                </view>
+            </view>
+            <view class="m-content-better">
+            <view class="m-content-word">
+                <scroll-view scroll-y="true" style="height: 400rpx;">
+                    <rich-text class="allAnswer " nodes='<span class="answerCons">{{content}}<span>'></rich-text>
+                 </scroll-view>
+                 </view>   
+                <view class="m-content-button">
+                    <view class="m-content-refresh" bindtap="_refreshShareTitle" wx:if="{{cancelText}}">
+                        {{cancelText}}
+                    </view>
+                    <block wx:if="{{share===true}}">
+                        <button bindtap="_onConfirm" open-type="share" wx:if="{{hideConfirmBtn===false}}">{{confirmText}}</button>
+                    </block>
+                    <block wx:else>
+                        <button bindtap="_onConfirm" wx:if="{{hideConfirmBtn===false}}">{{confirmText}}</button>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!--input popup-->
+    <block wx:elif="{{modalType == 'input'}}">
+        <view class="modal-mask" catchtouchmove="true"></view>
+        <view class="m-dialog" catchtouchmove="true">
+            <view class="cancel-btn ml-68" bindtap="_onCancel">X</view>
+            <view class="m-avater-input">
+                <view class="img-box">
+                    <image src='/img/input_popup_avater.png'></image>
+                </view>
+                <view class="express-title">{{content}}</view>
+            </view>
+            <view class="m-content-input">
+                <form bindsubmit='_addressForm'>
+                    <view class='c-input'>
+                        <view class="input-box">
+                            <span>收货人：</span>
+                            <input class="weui-input" name="contactName" maxlength="10" bindinput="bindName" placeholder="请输入收货人姓名" value="{{contactName}}" />
+                        </view>
+                        <view class="line"></view>
+                        <view class="input-box">
+                            <span>手机号：</span>
+                            <input class="weui-input" name="contactPhone" type="number" minlength="11" maxlength="11" bindinput="bindPhone" placeholder="请输入收货人手机号" value="{{contactPhone}}" />
+                        </view>
+                        <view class="line"></view>
+                        <view class="input-box text-over">
+                            <span>所在地区：</span>
+                            <input wx:if="{province.name.length<=4}" class="weui-input" name="area" bindtap="_selectAreaEvent" placeholder="请选择地区" value="{{province.name}}{{city.name}}{{area.name}}"  disabled="disabled"/>
+                            <input wx:else class="weui-input" name="area" bindtap="_selectAreaEvent" placeholder="请选择地区" value="{{province.name}}{{city.name}}&nbsp;&nbsp;&nbsp;&nbsp;>"  disabled="disabled"/>
+                            <input name="provinceId" value="{{province.id}}" style="display: none" />
+                            <input name="cityId" value="{{city.id}}" style="display: none" />
+                            <input name="areaId" value="{{area.id}}" style="display: none" />
+                        <view bindtap="_selectAreaEvent" class="arrow-icon"> 
+                        <image src="/img/arrow.png"></image>
+                        </view>   
+                        </view>
+                        <view class="line"></view>
+                        
+                        <view class="input-box" catchtouchmove="true">
+                            <span>详细地址：</span>
+                            <input catchtouchmove="false" class="weui-input" name="address" bindinput="bindArea" placeholder="请填写详细地址"  value="{{address}}" maxlength="30" ></input>
+                        </view>
+                        <view class="line"></view>
+                    </view>
+                    <view class="m-content-button input">
+                        <button formType="submit">{{confirmText}}</button>
+                    </view>
+                </form>
+            </view>
+        </view>
+    </block>
+    <!--gift popup-->
+    <block wx:elif="{{modalType == 'gift'}}">
+        <view class="modal-mask" catchtouchmove="true"></view>
+        <view class="successPopup" catchtouchmove="true">
+            <view>
+                <image src="/img/gift_success.png" />
+            </view>
+            <view class="sucess-gift-title">{{content}}</view>
+            <view class="success-gift-btn" bindtap="_onConfirm">{{confirmText}}</view>
+        </view>
+    </block>
+</block>

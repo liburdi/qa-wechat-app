@@ -1,0 +1,454 @@
+/* components/popup/popup.wxss */
+/* 蒙层 */
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+
+/* 弹框 */
+.modal-dialog {
+    font-size: 30rpx;
+    width: 560rpx;
+    position: fixed;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1500;
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 弹框标题*/
+.m-title {
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    align-self: stretch;
+    font-size: 36rpx;
+}
+
+.m-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 12vw;
+    transform: translateY(-50%);
+    margin-top: -112rpx;
+    z-index: 1001;
+    width: 76vw;
+    height: 60vh;
+}
+
+/* best */
+.m-avater-best {
+
+    width: 364rpx;
+    height: 332rpx;
+}
+
+.m-title-best {
+    display:flex;
+    align-center:center;
+    margin: 33rpx auto;
+    height: 32rpx;
+    font-size: 28rpx;
+    font-family: MicrosoftYaHeiUI-Bold, MicrosoftYaHeiUI;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    line-height: 28rpx;
+}
+
+.m-title-best image {
+    width: 32rpx;
+    height: 32rpx;
+    vertical-align: middle;
+    margin-right:4px;
+    position:relative;
+    top:-1px;
+}
+
+.m-button-best {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.m-button-best button {
+    width: 260rpx;
+    height: 92rpx;
+    border-radius: 46rpx;
+    font-size: 32rpx;
+    font-family: MicrosoftYaHeiUI;
+    line-height: 92rpx;
+    color: rgba(255, 255, 255, 1);
+    vertical-align: middle;
+}
+
+button.default {
+    border: 2rpx solid rgba(255, 255, 255, 1);
+    background: rgba(0, 0, 0, 0.1);
+
+}
+
+button.success {
+    background: linear-gradient(360deg, rgba(255, 105, 3, 1) 0%, rgba(255, 153, 0, 1) 100%);
+    box-shadow: 0 6rpx 6rpx 0 rgba(255, 105, 3, 0.3);
+    margin: 0 0 0 32rpx;
+}
+
+/* best end */
+
+/* better */
+
+.m-header-better {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 76vw;
+
+
+}
+
+.m-avater-better {
+    width: 320rpx;
+    height: 227rpx;
+    margin: 0 auto;
+}
+
+.m-content-better {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 24rpx;
+    width: 76vw;
+    padding:32rpx;
+}
+
+.min-con{
+  height: 430rpx;
+}
+.m-content-word {
+    color: rgba(102, 102, 102, 1);
+    line-height: 42rpx;
+    font-size: 28rpx;
+}
+
+.m-content-refresh {
+    text-align: center;
+    height: 37rpx;
+    font-size: 28rpx;
+    font-family: MicrosoftYaHei;
+    color: rgba(76, 132, 255, 1);
+    line-height: 37rpx;
+}
+
+.m-content-button button {
+    margin: 32rpx auto;
+    width: 380rpx;
+    background: linear-gradient(360deg, rgba(255, 105, 3, 1) 0%, rgba(255, 153, 0, 1) 100%);
+    box-shadow: 0rpx 6rpx 6rpx 0rpx rgba(255, 105, 3, 0.3);
+    border-radius: 46rpx;
+    font-size: 32rpx;
+    font-family: MicrosoftYaHeiUI;
+    color: rgba(255, 255, 255, 1);
+    line-height: 92rpx;
+}
+
+.m-content-button.input button {
+    width: 80% !important;
+}
+
+.cancel-btn {
+
+    width: 64rpx;
+    height: 64rpx;
+    border: 3rpx solid rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 32rpx;
+    line-height: 64rpx;
+    text-align: center;
+    margin-bottom: 32rpx;
+
+}
+
+.better {
+    top: 64rpx !important;
+}
+
+.input {
+    top: -32rpx !important;
+}
+
+
+/* better end */
+
+/* input begin */
+.m-avater-input {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    height: 62px;
+    background: linear-gradient(360deg, rgba(255, 105, 3, 1) 0%, rgba(255, 153, 0, 1) 100%);
+    border-radius: 24rpx 24rpx 0rpx 0rpx;
+
+}
+
+.express-title {
+    font-size: 32rpx;
+    font-family: MicrosoftYaHeiUI;
+    color: rgba(255, 255, 255, 1);
+    line-height: 41rpx;
+    margin-left: 110px;
+}
+
+.img-box {
+    position: absolute;
+    margin-left: 47rpx;
+    bottom: -5px;
+    z-index: 1;
+}
+
+.m-avater-input image {
+    width: 180rpx;
+    height: 224rpx;
+}
+
+.m-content-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 0rpx 0rpx 24rpx 24rpx;
+}
+.c-input {
+  position: relative;
+  z-index: 10000000;
+
+}
+.c-input span,
+input,
+textarea {
+    font-size: 26rpx;
+    font-family: MicrosoftYaHeiUI;
+    line-height: 26rpx;
+    color: rgba(51, 51, 51, 1);
+
+
+}
+
+.ml-68 {
+    margin-left: 68vw;
+}
+
+.c-input .input-box {
+    display: flex;
+    height: 98rpx;
+    vertical-align: middle;
+    margin: auto 64rpx;
+    position: relative;
+}
+
+.input-box span {
+    margin: auto 0;
+    width: 160rpx;
+    text-align: right;
+}
+
+.input-box input {
+    margin: auto 0rpx auto 15rpx;
+}
+
+.input-box textarea {
+    margin: auto 45rpx auto 15rpx;
+    width: 290rpx;
+    padding:0rpx;
+    cursor: auto;
+    height: 1.4rem;
+    font-family: UICTFontTextStyleBody;
+    min-height: 1.4rem;
+}
+
+.line {
+    width: 80%;
+    height: 2rpx;
+    background: rgba(216, 216, 216, 1);
+    margin: 0 auto;
+}
+
+
+/*gift begin*/
+.successPopup {
+    position: fixed;
+    top: 25vh;
+    left: 12vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1001;
+
+}
+
+.successPopup image {
+    height: 390rpx;
+    width: 560rpx;
+}
+
+.successPopup .sucess-gift-title {
+    font-size: 28prx;
+    font-family: MicrosoftYaHeiUI-Bold, MicrosoftYaHeiUI;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    line-height: 28rpx;
+    text-align: center;
+    margin-bottom: 90rpx;
+
+}
+
+.successPopup .success-gift-btn {
+    width: 326rpx;
+    height: 92rpx;
+    background: linear-gradient(360deg, rgba(255, 105, 3, 1) 0%, rgba(255, 153, 0, 1) 100%);
+    box-shadow: 0rpx 6rpx 6rpx 0rpx rgba(255, 105, 3, 0.3);
+    border-radius: 46rpx;
+    color: rgba(255, 255, 255, 1);
+    margin: 0 auto;
+    text-align: center;
+    line-height: 92rpx;
+
+}
+
+.m-info {
+
+
+    color: #888;
+    height:120rpx;
+    flex: 1;
+}
+.m-info .content-box{
+    font-size:28rpx;
+    color:rgba(102,102,102,1);
+    margin:48rpx auto;
+    line-height: 1.5;
+    text-align: center;
+    float: left;
+    width:484rpx;
+    display: block;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.m-avatur {
+    width: 120rpx;
+    height: 120rpx;
+    border: 1rpx solid #eee;
+    border-radius: 50%;
+}
+
+.m-name {
+    margin-top: 10rpx;
+    font-size: 30rpx;
+}
+
+.m-star {
+    display: flex;
+    width: 190rpx;
+    margin: 20rpx auto 0;
+}
+
+.m-phone {
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #888888;
+}
+
+.modal-footer {
+    display: flex;
+    height: 100rpx;
+    margin-top: 30rpx;
+}
+
+.btn-footer {
+    width: 280rpx;
+    font-size: 36rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-l-footer {
+    border-right: 1rpx solid #E5E5E5;
+}
+
+.stars-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.star-icon {
+    display: block;
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 20rpx;
+}
+
+.little-star {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+
+.star-icon:last-child {
+    margin-right: 0;
+}
+
+.m-no-grade {
+    text-align: center;
+    color: #888888;
+    margin-top: 10rpx;
+}
+
+.m-i-img {
+    width: 240rpx;
+    height: 240rpx;
+    margin: 0;
+}
+.arrow-icon {
+  position: absolute;
+  width: 18px;
+  padding-left: 4px;
+  height: 100%;
+  right:0rpx;
+  background: #fff;
+  z-index: 1000;
+}
+.arrow-icon image{
+  position: absolute;
+  top:50%;
+  width: 12px;
+  height:12px;
+  transform: translateY(-50%);
+}
+.text-over {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

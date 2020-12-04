@@ -1,0 +1,31 @@
+<!--pages/make/make.wxml-->
+
+  <view class="{{loading?'container bg white':'container bg'}}" bindlongtap="{{ openSettingBtnHidden ? 'saveCanvas' :'handleSetting'}}">
+<block wx:if="{{deg}}">
+<view class="fixed one">python scipy</view>
+<view class="fixed two">回归分析</view>
+<view class="fixed three">scikit-learn</view>
+<view class="fixed four">决策树</view>
+<view class="fixed five">随机森林</view>
+</block>
+<block wx:else>
+<view class="fixed one-1">python scipy</view>
+<view class="fixed two-1">回归分析</view>
+<view class="fixed three-1">scikit-learn</view>
+<view class="fixed four-1">决策树</view>
+<view class="fixed five-1">随机森林</view>
+</block>
+
+
+<view wx:if="{{loading==true}}" class="loading-box">python-scipy正在分析{{mottoValue}}维度数据</view>
+<block wx:else>
+  <canvas class='canvpos' canvas-id="canvpos" mode="widthFix">
+  </canvas>
+   <cover-view class="make-fix-box">
+        长按图片保存可分享至朋友圈
+    </cover-view>
+</block>
+
+
+</view>
+<popup id='powerPopup' modalType='default' cancelText='取消' confirmText='去打开' bind:cancelEvent="closePowerPopup" content="检测到您没有打开相册授权无法保存图片，是否立即打开相册授权？" openSetting="{{true}}" />

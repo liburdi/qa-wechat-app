@@ -1,0 +1,106 @@
+/* pages/make/make.wxss */
+
+.container {
+  background-color: rgba(245, 245, 245, 1);
+  min-height: 1355rpx;
+}
+
+.white {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.loading-box {
+  margin: auto 0;
+}
+
+.canvpos {
+  width: 653rpx;
+  height: 1355rpx;
+  position: fixed;
+  top: 0rpx;
+}
+
+.fixed {
+  position: fixed;
+  color: rgba(235, 235, 235, 0.9);
+}
+
+.fixed.one {
+  transform: rotate(6.5deg);
+  top: 825rpx;
+  left: 100rpx;
+}
+
+.fixed.one-1 {
+  transform: rotate(16.5deg);
+  top: 835rpx;
+  left: 90rpx;
+}
+
+.fixed.two {
+  transform: rotate(28.5deg);
+  top: 915rpx;
+  left: 600rpx;
+}
+
+.fixed.two-1 {
+  transform: rotate(18.5deg);
+  top: 925rpx;
+  left: 590rpx;
+}
+
+.fixed.three {
+  transform: rotate(79.5deg);
+  top: 315rpx;
+  left: 190rpx;
+}
+
+.fixed.three-1 {
+  transform: rotate(89.5deg);
+  top: 325rpx;
+  left: 180rpx;
+}
+
+.fixed.four {
+  transform: rotate(279.5deg);
+  top: 1215rpx;
+  left: 70rpx;
+}
+
+.fixed.four-1 {
+  transform: rotate(269.5deg);
+  top: 1225rpx;
+  left: 60rpx;
+}
+
+.fixed.five {
+  transform: rotate(279.5deg);
+  top: 315rpx;
+  left: 590rpx;
+}
+
+.fixed.five-1 {
+  transform: rotate(289.5deg);
+  top: 325rpx;
+  left: 580rpx;
+}
+.make-fix-box {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width:653rpx;
+  min-width: 240rpx;
+  height: 56rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 100rpx;
+  font-size: 24rpx;
+  font-family: MicrosoftYaHeiUI;
+  color: rgba(255, 255, 255, 1);
+  line-height: 56rpx;
+  text-align: center;
+}

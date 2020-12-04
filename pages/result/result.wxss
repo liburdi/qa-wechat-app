@@ -1,0 +1,134 @@
+/**index.wxss**/
+.container{
+  background-color: rgba(245,245,245,1);
+  font-family:  KaiTi;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(249,217,48,1);
+  width:100vw;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx auto;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+  text-align: center;
+}
+
+.usermotto {
+  margin-top: 400rpx;
+}
+.header-box{
+  margin: 0 auto;
+  display: flex;
+flex-direction: column;
+
+
+}
+.question-box{
+  margin:20rpx auto 100rpx;
+  width:80vw;
+  border-radius:20rpx;
+  /* border: 2rpx solid rgba(249,217,48,1); */
+  box-sizing: border-box;
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction:column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0.7;
+background-color: rgba(245,245,245);
+}
+.picker{
+  text-align: center;
+  color:rgba(2,62,150,1);
+  margin-bottom: 8vh;
+  font-size: 45rpx;
+  font-weight: bold;
+  position: relative;
+}
+.bgImg{
+  height:250rpx;
+  width:250rpx;
+  opacity:0.2;
+  margin:auto;
+}
+.other-wigdget{
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+margin: 70rpx auto 0rpx;
+height: 80rpx;
+/* background-color: rgba(249,217,48,1); */
+border-radius: 40rpx;
+vertical-align: center;
+line-height: 80rpx;
+/* color: #fff; */
+font-size: 40rpx;
+/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+}
+.picker-0{
+  color:red;
+}
+.picker-1{
+  color:orange;
+}
+.picker-2{
+  color:yellow;
+}
+.picker-3{
+  color:green;
+}
+.picker-4{
+  color:cyan;
+}
+.picker-5{
+  color:blue;
+}
+.picker-6{
+  color:blueviolet;
+}
+.picker-7{
+  color:black;
+}
+.picker-8{
+  color:white;
+}
+.picker-9{
+  color:gray;
+}
+.picker-10{
+  color:pink;
+}
+.picker-11{
+  color:brown;
+}
+.q-box-header{
+  color: rgba(15,46,110,1);
+  font-size:30rpx;
+  height:50rpx;
+  margin-top:12rpx;
+}
+.q-box-content{
+  color: rgba(2,62,150,1);
+  font-size:35rpx;
+  height:200rpx;
+  margin:30rpx 30rpx 30rpx;
+}
+.next-question{
+  background-color: rgba(2,62,150,1);
+  color:#fff;
+  margin-bottom: 48rpx;
+}
