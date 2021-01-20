@@ -20,19 +20,17 @@
   <view wx:else class="question-box">
     <view class="q-box-header">-{{constellations[questionIndex].title}}-</view>
     <view  class="q-box-content">{{constellations[questionIndex].question}}</view>
-    <picker  bindtap="clearTime" bindchange="bindPickerChange" value="{{index}}" range="{{constellations[questionIndex].answer}}">
-      <view wx:if="{{questionIndex==0}}" class="picker">
-      <image  wx:if="{{showBg===true}}" class="bgImg" src="/images/zhiWen.png"></image>
-       <image  wx:else class="bgImg" ></image>
-      <other-widget class="other-wigdget">-{{constellations[questionIndex].answer[index]}}-</other-widget> 
-        
-      </view>
-      <view wx:if="{{questionIndex==1}}" class="picker picker-{{index}}">
-       <image  wx:if="{{showBg===true}}" class="bgImg" src="/images/zhiWen.png"></image>
-        <image  wx:else class="bgImg" ></image>
-      <other-widget class="other-wigdget">-{{constellations[questionIndex].answer[index]}}-</other-widget> 
-      </view>
-    </picker>
+   
+    
+<radio-group  class="my-radio" bindtap="clearTime" bindchange="bindPickerChange" >
+        <label class="weui-cell weui-check__label" wx:for="{{constellations[questionIndex].objectArray}}" wx:key="{{item.id}}">
+
+          <view class="weui-cell__hd">
+            <radio value="{{item.id}}" checked="{{item.checked}}"/>
+          </view>
+          <view class="weui-cell__bd">{{item.name}}</view>
+        </label>
+      </radio-group>
     <button wx:if="{{questionIndex!=1}}" class="next-question" bindtap="nextQuestion" role="button">再来一题</button>
     <block  wx:else>
     <button class="next-question" bindtap="makeResult" role="button">获取结果</button>

@@ -22,11 +22,81 @@ Page({
     constellations: {
       "0": {
         "answer": ['白羊', '金牛', '双子', '巨蟹', '狮子', '处女', '天枰', '天蝎', '射手', '摩羯', '水瓶', '双鱼'],
+        objectArray: [
+          {
+            id: 0,
+            name: '白羊',
+            checked:'true'
+          },
+          {
+            id: 1,
+            name: '金牛'
+          },
+          {
+            id: 2,
+            name: '双子'
+          },
+          {
+            id: 3,
+            name: '巨蟹'
+          },
+          {
+            id: 4,
+            name: '狮子'
+          },
+          {
+            id: 5,
+            name: '处女'
+          },
+          {
+            id: 6,
+            name: '天枰'
+          },
+          {
+            id: 7,
+            name: '天蝎'
+          },
+          {
+            id: 8,
+            name: '射手'
+          },
+          {
+            id: 9,
+            name: '摩羯'
+          },
+          {
+            id: 10,
+            name: '水瓶'
+          },
+          {
+            id: 11,
+            name: '双鱼'
+          },
+        ],
         "question": "这么优秀的你，竟然还单身？莫非你的星座是",
         "title": "星座选择"
       },
       "1": {
         "answer": ['红', '橙', '黄', '绿', '青', '蓝', '紫', '黑', '白', '灰', '粉','棕色'],
+        objectArray: [
+          {
+            id: 0,
+            name: '红',
+            checked: 'true'
+          },
+          {
+            id: 1,
+            name: '黄'
+          },
+          {
+            id: 2,
+            name: '白'
+          },
+          {
+            id: 3,
+            name: '蓝'
+          },
+        ],
         "question": "相对而言，你更喜欢一下哪个颜色",
         "title": "颜色选择"
       },
@@ -62,43 +132,43 @@ Page({
    */
   onShow: function() {
     let that = this
-    id1=setTimeout(function () {
-      that.setData({
-        showBg: true,
-        index:1
-      })
-    }, 700)
-    id2=setTimeout(function () {
-      that.setData({
-        showBg: false,
-        index: 3
-      })
-    }, 1200)
-    id3=setTimeout(function () {
-      that.setData({
-        showBg: true,
-        index: 5
-      })
-    }, 1700)
-    id4=setTimeout(function () {
-      that.setData({
-        showBg: false,
-        index: 9
-      })
-    }, 2200)
-    id5 = setTimeout(function () {
-      that.setData({
-        showBg: true,
-        index: 11
-      })
-    }, 2700)
-    id6 = setTimeout(function () {
-      that.setData({
-        showBg: false,
-        index: 6
-      })
-      that.onShow()
-    }, 3200)
+    // id1=setTimeout(function () {
+    //   that.setData({
+    //     showBg: true,
+    //     index:1
+    //   })
+    // }, 700)
+    // id2=setTimeout(function () {
+    //   that.setData({
+    //     showBg: false,
+    //     index: 3
+    //   })
+    // }, 1200)
+    // id3=setTimeout(function () {
+    //   that.setData({
+    //     showBg: true,
+    //     index: 5
+    //   })
+    // }, 1700)
+    // id4=setTimeout(function () {
+    //   that.setData({
+    //     showBg: false,
+    //     index: 9
+    //   })
+    // }, 2200)
+    // id5 = setTimeout(function () {
+    //   that.setData({
+    //     showBg: true,
+    //     index: 11
+    //   })
+    // }, 2700)
+    // id6 = setTimeout(function () {
+    //   that.setData({
+    //     showBg: false,
+    //     index: 6
+    //   })
+    //   that.onShow()
+    // }, 3200)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -124,7 +194,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    wx.navigateTo({
+      url: '/pages/index/index'
+    })
   },
 
   /**
