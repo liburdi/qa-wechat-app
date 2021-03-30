@@ -1,4 +1,4 @@
-# qa-wecaht-app
+### qa-wecaht-app
 
 问答测评微信小程序
 
@@ -11,7 +11,7 @@
 本项目为问答类微信小程序demo，适合微信小程序入门学习。
 
 
-# demo
+### demo
 
 ![image](https://github.com/KenRitchie/qa-wecaht-app/blob/master/images/code.jpg)
 
